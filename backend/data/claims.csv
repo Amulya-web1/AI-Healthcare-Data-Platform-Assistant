@@ -1,0 +1,9 @@
+claim_id,member_id,provider_name,claim_amount,claim_status,claim_date,diagnosis_code
+5001,1001,Mayo Clinic,1200,Approved,2026-01-10,E11.9
+5002,1002,Cleveland Clinic,850,Approved,2026-01-12,I10
+5003,1001,Mayo Clinic,450,Denied,2026-02-01,J45.909
+5004,1004,Johns Hopkins,2100,Approved,2026-02-10,E78.5
+5005,1005,Cleveland Clinic,650,Pending,2026-03-01,M54.5
+5006,1006,Mount Sinai,1750,Approved,2026-03-12,I25.10
+5007,1007,Banner Health,980,Denied,2026-03-18,N39.0
+5008,1008,Emory Healthcare,1250,Approved,2026-04-02,R07.9

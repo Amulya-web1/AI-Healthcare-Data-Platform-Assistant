@@ -1,0 +1,9 @@
+member_id,member_name,state,status,plan_type,effective_date,termination_date
+1001,John Smith,TX,Active,Gold,2025-01-01,
+1002,Sarah Jones,FL,Active,Silver,2025-02-15,
+1003,Mike Davis,CA,Inactive,Bronze,2024-06-01,2026-01-31
+1004,Emily Clark,TX,Active,Gold,2025-03-10,
+1005,David Lee,NY,Inactive,Silver,2024-01-01,2025-12-31
+1006,Priya Patel,NJ,Active,Platinum,2025-05-01,
+1007,Carlos Rivera,AZ,Active,Silver,2025-04-20,
+1008,Nina Brown,GA,Active,Bronze,2025-06-01,
