@@ -1,9 +1,9 @@
-from agent_router import route_question
-from sql_agent import generate_sql
-from sql_executor import execute_sql
-from rag_agent import ask_rag_agent
-from data_quality_agent import run_data_quality_checks
-from documentation_agent import generate_documentation
+from backend.agent_router import route_question
+from backend.sql_agent import generate_sql
+from backend.sql_executor import execute_sql
+from backend.rag_agent import ask_rag_agent
+from backend.data_quality_agent import run_data_quality_checks
+from backend.documentation_agent import generate_documentation
 
 
 def extract_table_name(question: str) -> str:
