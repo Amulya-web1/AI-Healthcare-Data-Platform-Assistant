@@ -1,2 +1,4 @@
 # AI-Healthcare-Data-Platform-Assistant
-Enterprise AI Data Platform Assistant using RAG, Natural Language SQL, Data Quality Monitoring, and Automated Documentation Generation.
+AI-powered healthcare data platform assistant for claims analytics, member eligibility, data quality monitoring, RAG-based runbook search, and natural language SQL.
+
+
