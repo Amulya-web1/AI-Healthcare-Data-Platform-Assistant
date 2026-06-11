@@ -1,0 +1,16 @@
+Claims Processing Runbook
+
+If claim ingestion fails:
+
+1. Verify source file arrival.
+2. Check schema changes.
+3. Validate member identifiers.
+4. Review rejected records.
+5. Verify database connectivity.
+
+Common Causes:
+
+- Missing claim amount
+- Invalid member ID
+- Corrupted source file
+- Provider mismatch

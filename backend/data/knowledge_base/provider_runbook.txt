@@ -1,0 +1,14 @@
+Provider Data Runbook
+
+Provider data loads can fail due to:
+
+- Missing provider identifier
+- Invalid provider taxonomy code
+- Duplicate provider records
+- Reference table mismatch
+
+Troubleshooting:
+
+1. Validate provider IDs.
+2. Check taxonomy mappings.
+3. Review duplicate records.

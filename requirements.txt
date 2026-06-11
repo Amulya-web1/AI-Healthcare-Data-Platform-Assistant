@@ -12,3 +12,5 @@ sqlalchemy
 python-dotenv
 great-expectations
 pydantic
+ollama
+sentence-community
