@@ -217,8 +217,6 @@ LOG_LEVEL=INFO
 
 ## Author
 
-## Author
-
 Amulya Bandi
 
 Senior Data Engineer with experience building cloud-native data platforms, AI-powered analytics solutions, ETL pipelines, and modern data architectures using Azure, Databricks, Snowflake, Python, and Generative AI technologies.
