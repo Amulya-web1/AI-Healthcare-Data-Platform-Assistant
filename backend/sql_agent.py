@@ -1,4 +1,14 @@
+import os
 import ollama
+
+OLLAMA_HOST = os.getenv(
+    "OLLAMA_HOST",
+    "http://localhost:11434"
+)
+
+client = ollama.Client(
+    host=OLLAMA_HOST
+)
 
 SCHEMA = """
 Table: member_eligibility
@@ -64,7 +74,7 @@ Question:
 {question}
 """
 
-    response = ollama.chat(
+    response = client.chat(
         model="llama3.1",
         messages=[
             {"role": "user", "content": prompt}

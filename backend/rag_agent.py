@@ -1,6 +1,16 @@
+import os
 import ollama
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
+
+OLLAMA_HOST = os.getenv(
+    "OLLAMA_HOST",
+    "http://localhost:11434"
+)
+
+client = ollama.Client(
+    host=OLLAMA_HOST
+)
 
 VECTORSTORE_PATH = "backend/vectorstore"
 
@@ -35,7 +45,7 @@ Question:
 {question}
 """
 
-    response = ollama.chat(
+    response = client.chat(
         model="llama3.1",
         messages=[
             {"role": "user", "content": prompt}

@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-API_URL = "http://127.0.0.1:8000/ask"
+API_URL = "http://api:8000/ask"
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []

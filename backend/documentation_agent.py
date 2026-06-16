@@ -1,4 +1,14 @@
+import os
 import ollama
+
+OLLAMA_HOST = os.getenv(
+    "OLLAMA_HOST",
+    "http://localhost:11434"
+)
+
+client = ollama.Client(
+    host=OLLAMA_HOST
+)
 
 def generate_documentation(component_name: str):
 
@@ -26,7 +36,7 @@ Format:
 8. Owner
 """
 
-    response = ollama.chat(
+    response = client.chat(
         model="llama3.2:3b",
         messages=[
             {
