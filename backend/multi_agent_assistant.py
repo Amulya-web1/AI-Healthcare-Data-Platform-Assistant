@@ -1,9 +1,14 @@
+import time
 from backend.agent_router import route_question
 from backend.sql_agent import generate_sql
 from backend.sql_executor import execute_sql
 from backend.rag_agent import ask_rag_agent
 from backend.data_quality_agent import run_data_quality_checks
 from backend.documentation_agent import generate_documentation
+try:
+    from backend.logger import logger
+except ModuleNotFoundError:
+    from logger import logger
 
 
 def extract_table_name(question: str) -> str:
@@ -19,11 +24,24 @@ def extract_table_name(question: str) -> str:
 
 
 def answer_question(question: str):
+    start_time = time.time()
+
+    logger.info(f"QUESTION_RECEIVED | {question}")
+    
     route = route_question(question)
 
     if route == "sql":
         sql = generate_sql(question)
         result = execute_sql(sql)
+
+        execution_time = round(
+            time.time() - start_time,
+            2
+        )
+
+        logger.info(
+            f"SQL_AGENT | SUCCESS | {execution_time}s | {question}"
+        )
 
         return {
             "agent": "SQL Agent",
@@ -35,6 +53,15 @@ def answer_question(question: str):
     if route == "rag":
         answer = ask_rag_agent(question)
 
+        execution_time = round(
+            time.time() - start_time,
+            2
+        )
+
+        logger.info(
+            f"RAG_AGENT | SUCCESS | {execution_time}s | {question}"
+        )
+
         return {
             "agent": "RAG Assistant",
             "question": question,
@@ -44,6 +71,15 @@ def answer_question(question: str):
     if route == "data_quality":
         table_name = extract_table_name(question)
         dq_result = run_data_quality_checks(table_name)
+
+        execution_time = round(
+            time.time() - start_time,
+            2
+        )
+
+        logger.info(
+            f"DQ_AGENT | SUCCESS | {execution_time}s | {question}"
+        )
 
         return {
             "agent": "Data Quality Agent",
@@ -85,6 +121,15 @@ def answer_question(question: str):
     """
 
     documentation = generate_documentation(component_details)
+
+    execution_time = round(
+        time.time() - start_time,
+        2
+    )
+
+    logger.info(
+        f"DOC_AGENT | SUCCESS | {execution_time}s | {question}"
+    )
 
     return {
         "agent": "Documentation Agent",
