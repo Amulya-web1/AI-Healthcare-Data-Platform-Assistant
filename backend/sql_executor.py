@@ -1,7 +1,8 @@
 import sqlite3
 import pandas as pd
+from backend.config import DATABASE_PATH
 
-DB_PATH = "backend/db/healthcare.db"
+DB_PATH = DATABASE_PATH
 
 def execute_sql(sql_query):
 

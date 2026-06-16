@@ -2,6 +2,10 @@ import sqlite3
 import pandas as pd
 import os
 import ollama
+from backend.config import (
+    OLLAMA_HOST,
+    OLLAMA_MODEL
+)
 
 OLLAMA_HOST = os.getenv(
     "OLLAMA_HOST",
@@ -11,8 +15,9 @@ OLLAMA_HOST = os.getenv(
 client = ollama.Client(
     host=OLLAMA_HOST
 )
+from backend.config import DATABASE_PATH
 
-DB_PATH = "backend/db/healthcare.db"
+DB_PATH = DATABASE_PATH
 
 def run_data_quality_checks(table_name: str):
     conn = sqlite3.connect(DB_PATH)
@@ -64,7 +69,7 @@ Return:
 """
 
     response = client.chat(
-        model="llama3.1",
+        model=OLLAMA_MODEL,
         messages=[
             {"role": "user", "content": prompt}
         ]

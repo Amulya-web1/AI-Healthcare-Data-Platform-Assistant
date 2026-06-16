@@ -1,5 +1,9 @@
 import os
 import ollama
+from backend.config import (
+    OLLAMA_HOST,
+    OLLAMA_MODEL
+)
 
 OLLAMA_HOST = os.getenv(
     "OLLAMA_HOST",
@@ -75,7 +79,7 @@ Question:
 """
 
     response = client.chat(
-        model="llama3.1",
+        model=OLLAMA_MODEL,
         messages=[
             {"role": "user", "content": prompt}
         ]

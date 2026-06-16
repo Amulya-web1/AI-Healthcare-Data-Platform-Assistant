@@ -1,7 +1,8 @@
 import sqlite3
 import pandas as pd
+from backend.config import DATABASE_PATH
 
-conn = sqlite3.connect("backend/db/healthcare.db")
+conn = sqlite3.connect(DATABASE_PATH)
 
 print("\n=== MEMBER ELIGIBILITY ===")
 members = pd.read_sql(

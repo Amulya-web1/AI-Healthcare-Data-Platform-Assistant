@@ -2,6 +2,11 @@ import os
 import ollama
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
+from backend.config import (
+    OLLAMA_HOST,
+    OLLAMA_MODEL,
+    VECTORSTORE_PATH
+)
 
 OLLAMA_HOST = os.getenv(
     "OLLAMA_HOST",
@@ -46,7 +51,7 @@ Question:
 """
 
     response = client.chat(
-        model="llama3.1",
+        model=OLLAMA_MODEL,
         messages=[
             {"role": "user", "content": prompt}
         ]

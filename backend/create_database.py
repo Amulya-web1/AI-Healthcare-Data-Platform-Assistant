@@ -1,6 +1,7 @@
 import os
 import sqlite3
 import pandas as pd
+from backend.config import DATABASE_PATH
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -15,7 +16,7 @@ claims_path = os.path.join(DATA_DIR, "claims.csv")
 members_df = pd.read_csv(members_path)
 claims_df = pd.read_csv(claims_path)
 
-conn = sqlite3.connect(DB_PATH)
+conn = sqlite3.connect(DATABASE_PATH)
 
 members_df.to_sql(
     "member_eligibility",

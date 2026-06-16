@@ -1,4 +1,4 @@
-from multi_agent_assistant import answer_question
+from backend.multi_agent_assistant import answer_question
 
 questions = [
     "How many active members are in Texas?",
